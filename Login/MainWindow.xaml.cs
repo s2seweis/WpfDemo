@@ -9,28 +9,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfDemo
+namespace Login
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        //Constructor for initialize
         public MainWindow()
         {
-            // Initializes all the components of a user interface defined in the XAML representation
             InitializeComponent();
-
-            // create an instance of an object <= OOP
-
-
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Ckick Me!");
         }
     }
 }
