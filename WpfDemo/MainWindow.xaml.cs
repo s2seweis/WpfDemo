@@ -16,10 +16,21 @@ namespace WpfDemo
     /// </summary>
     public partial class MainWindow : Window
     {
+        //Constructor for initialize
         public MainWindow()
         {
             // Initializes all the components of a user interface defined in the XAML representation
             InitializeComponent();
+
+            // create an instance of an object <= OOP
+            Button myButton = new Button();
+            myButton.Content = "B";
+
+            Grid.SetRow(myButton, 3);
+            Grid.SetColumn(myButton, 4);
+
+            Grid myGrid = (Grid)FindName("myGrid");
+            myGrid.Children.Add(myButton);
         }
     }
 }

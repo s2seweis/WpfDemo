@@ -6,7 +6,30 @@
         xmlns:local="clr-namespace:WpfDemo"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid x:Name="myGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <!--/Each side get a relative margin of 100 with */-->
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Label Grid.Row="1" Grid.Column="2" Content="Title of App" />
+        <Label Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="3" Content="Sample Text, Just a matter of time until I got my cut out of this course!" />
+        <Button Grid.Row="3" Grid.Column="2" Content="A"/>
+        <!--<Button Grid.Row="3" Grid.Column="4" Content="B"/>-->
 
     </Grid>
 </Window>
