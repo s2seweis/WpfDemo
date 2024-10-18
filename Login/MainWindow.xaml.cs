@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Diagnostics.Contracts;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,13 @@ namespace Login
         public MainWindow()
         {
             InitializeComponent();
+
+            //OOP build a new Instance of our LoginView
+            //Our user controls are reusable components
+            MainContent.Content = new LoginView();
+
+
+
         }
     }
 }

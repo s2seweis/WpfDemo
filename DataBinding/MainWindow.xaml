@@ -1,0 +1,61 @@
+﻿<Window x:Class="DataBinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataBinding"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="150" Width="265">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height = "10" />
+            <RowDefinition Height = "Auto" />
+            <RowDefinition Height = "Auto" />
+            <RowDefinition Height = "10" />
+            <RowDefinition Height = "*" />
+            <RowDefinition Height = "10" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width = "10" />
+            <ColumnDefinition Width = "Auto" />
+            <ColumnDefinition Width = "38*" />
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="34*"/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width = "10" />
+            <ColumnDefinition Width="10.866"/>
+
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="1" Grid.Column="1" Margin="2,2,2,2" Content="Name"/>
+
+        <TextBox Text="{Binding Path=Name, Mode=OneWayToSource}" Grid.Row="1" Grid.Column="2" Margin="2,2,2,2" Grid.ColumnSpan="6" />
+        <!--Replace the mode by OneWay, TwoWay, OneWayToSource-->
+        <Label Content="Age" Margin="2,2,2,2" Grid.Column="1" Grid.Row="2" />
+
+        <TextBox Text="{Binding Path=Age, Mode=OneWayToSource}" Grid.Column="2" Grid.Row="2" Margin="2,0,2,0" Grid.ColumnSpan="6" Height="26" VerticalAlignment="Center"/>
+
+        <Button Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="7"  Content="Info" Click="Button_Click" />
+    </Grid>
+</Window>
+    
+    
+    <!--Modes of DataBinding
+    1. OneWay 
+    OneWay binding means that data flows from the source (the underlying data or model) to the target (the UI element). 
+    Changes made to the source will automatically update the UI, but changes made in the UI are not reflected back to the source.
+    
+    2. TwoWay 
+    TwoWay binding allows data to flow both ways—from source to target and from target to source. 
+    When the value in the UI element changes, the source is updated accordingly, and vice versa.
+    This is the most common binding mode used when you want to let users interact with the data (e.g., a TextBox where a user types in some information, and that value should be saved to the data model).
+    
+    3. OneWayToSource
+    OneWayToSource binding is a slightly uncommon mode, but it has specific uses. 
+    It only allows data to flow from the target (UI) to the source (data model). 
+    This means that changes made in the UI element are reflected back to the model, 
+    but changes in the model do not update the UI element.-->
