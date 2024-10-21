@@ -33,7 +33,8 @@
 
         <Label Grid.Row="1" Grid.Column="1" Margin="2,2,2,2" Content="Name"/>
 
-        <TextBox Text="{Binding Path=Name, Mode=OneWayToSource}" Grid.Row="1" Grid.Column="2" Margin="2,2,2,2" Grid.ColumnSpan="6" />
+        <TextBox Text="{Binding Path=Name, Mode=OneTime}" Grid.Row="1" Grid.Column="2" Margin="2,2,2,2" Grid.ColumnSpan="6" />
+        <!--<TextBox Text="{Binding Path=Name, Mode=OneWayToSource}" Grid.Row="1" Grid.Column="2" Margin="2,2,2,2" Grid.ColumnSpan="6" />-->
         <!--Replace the mode by OneWay, TwoWay, OneWayToSource-->
         <Label Content="Age" Margin="2,2,2,2" Grid.Column="1" Grid.Row="2" />
 
@@ -42,20 +43,23 @@
         <Button Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="7"  Content="Info" Click="Button_Click" />
     </Grid>
 </Window>
-    
-    
-    <!--Modes of DataBinding
-    1. OneWay 
+
+
+    <!--OneWay
     OneWay binding means that data flows from the source (the underlying data or model) to the target (the UI element). 
     Changes made to the source will automatically update the UI, but changes made in the UI are not reflected back to the source.
-    
-    2. TwoWay 
+
+    TwoWay
     TwoWay binding allows data to flow both ways—from source to target and from target to source. 
-    When the value in the UI element changes, the source is updated accordingly, and vice versa.
-    This is the most common binding mode used when you want to let users interact with the data (e.g., a TextBox where a user types in some information, and that value should be saved to the data model).
-    
-    3. OneWayToSource
-    OneWayToSource binding is a slightly uncommon mode, but it has specific uses. 
-    It only allows data to flow from the target (UI) to the source (data model). 
-    This means that changes made in the UI element are reflected back to the model, 
-    but changes in the model do not update the UI element.-->
+    When the value in the UI element changes, the source is updated accordingly, and vice versa. 
+    This is most commonly used when you want users to interact with data (e.g., a TextBox where a user types information, and the value should be saved to the data model).
+
+    OneWayToSource
+    OneWayToSource binding only allows data to flow from the target (UI) to the source (data model)´.
+    Changes made in the UI element are reflected back to the model, but changes in the model do not update the UI element. 
+    This mode is less common but useful when only user inputs are required to update the data model.
+
+    OneTime (For configuration or constants, things that not change over time)
+    OneTime binding is a simple and lightweight mode that is used when the data is only read once from the source 
+    and bound to the target at the moment of binding. It does not track or respond to any subsequent changes to the source. 
+    This is useful when you want a static display of data, which doesn't need to be updated after the initial load (e.g., for static labels or titles that don't change dynamically).-->
