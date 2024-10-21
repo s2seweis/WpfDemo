@@ -19,6 +19,7 @@ namespace Authentication
         public MainWindow()
         {
             InitializeComponent();
+            MainContent.Content = new LoginView();
         }
     }
 }
